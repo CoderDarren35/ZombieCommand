@@ -3,10 +3,14 @@
 [ext_resource path="res://src/weapons.gd" type="Script" id=1]
 
 [node name="weapons" type="ItemList"]
-margin_right = 60.0
+margin_left = 2.0
+margin_right = 62.0
 margin_bottom = 600.0
+items = [ "rifle", null, false, "rocket", null, false ]
 auto_height = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
