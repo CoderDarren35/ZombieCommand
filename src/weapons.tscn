@@ -6,7 +6,7 @@
 margin_left = 2.0
 margin_right = 62.0
 margin_bottom = 600.0
-items = [ "rifle", null, false, "rocket", null, false ]
+items = [ "rifle", null, false, "grenade", null, false ]
 auto_height = true
 script = ExtResource( 1 )
 __meta__ = {
@@ -14,3 +14,4 @@ __meta__ = {
 }
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 542, 600 )
