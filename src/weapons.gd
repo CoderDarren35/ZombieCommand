@@ -8,6 +8,7 @@ enum weapon{
 	GRENADE
 }
 func fire(at: Vector2):
+	var parent = get_parent()
 	var items := get_selected_items()
 	if not len(items):
 		return
@@ -24,7 +25,7 @@ func fire(at: Vector2):
 		weapon.GRENADE:
 			var explosion := Explosion.instance()
 			explosion.position = at
-			add_child(explosion)
+			parent.add_child(explosion)
 
 func _ready():
 	clear()
