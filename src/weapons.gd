@@ -1,5 +1,7 @@
 tool
 extends ItemList
+signal rifle (at)
+signal grenade (at)
 const Explosion := preload("res://src/explosion.tscn")
 onready var viewport_rect := get_viewport_rect()
 enum weapon{
@@ -17,11 +19,7 @@ func fire(at: Vector2):
 	var item := items[0]
 	match item:
 		weapon.RIFLE:
-			$RayCast2D.cast_to = at - $RayCast2D.position
-			$RayCast2D.force_raycast_update()
-			if $RayCast2D.is_colliding():
-				var collider = $RayCast2D.get_collider()
-				collider.queue_free()
+			
 		weapon.GRENADE:
 			var explosion := Explosion.instance()
 			explosion.position = at

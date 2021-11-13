@@ -7,7 +7,7 @@ func _physics_process(delta):
 
 func _ready():
 	$AnimatedSprite.play("default")
-	
 
-func _on_AnimatedSprite_animation_finished():
+
+func _on_AudioStreamPlayer_finished():
 	queue_free()

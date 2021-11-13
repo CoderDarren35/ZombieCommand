@@ -13,7 +13,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 542, 600 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

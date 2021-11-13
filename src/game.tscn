@@ -14,6 +14,9 @@ margin_left = 1.0
 margin_top = 1.0
 margin_right = 61.0
 margin_bottom = 601.0
-items = [ "rifle", null, false, "grenade", null, false, "rifle", null, false, "grenade", null, false ]
+
+[node name="rifle" type="RayCast2D" parent="."]
+position = Vector2( 542, 600 )
 
 [connection signal="timeout" from="spawner" to="." method="_on_spawner_timeout"]
+[connection signal="rifle" from="weapons" to="." method="_on_weapons_rifle"]
