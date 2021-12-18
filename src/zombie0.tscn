@@ -6,4 +6,4 @@
 speed = 100.0
 
 [node name="AnimatedSprite" parent="." index="0"]
-frame = 2
+frame = 3

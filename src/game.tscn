@@ -23,9 +23,23 @@ position = Vector2( 542, 600 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="rifle"]
 stream = ExtResource( 3 )
 
-[node name="lives" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="survivorCount" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 580.0
+margin_right = 56.0
+margin_bottom = 594.0
+text = "10"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="survivors" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 562.0
+margin_right = 60.0
+margin_bottom = 576.0
+text = "Survivors"
 __meta__ = {
 "_edit_use_anchors_": false
 }

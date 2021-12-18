@@ -4,13 +4,14 @@ var Zombie0 = preload("res://src/zombie0.tscn")
 export var starting_lives := 10
 
 func _ready():
-	$lives.text = str(starting_lives)
+	$survivorCount.text = str(starting_lives)
 	
 func _on_spawner_timeout():
 	var zombie0 = Zombie0.instance()
 	zombie0.offset = $weapons.rect_size.x
 	zombie0.connect("win", self, "_on_zombie_win")
 	add_child(zombie0)
+	$spawner.wait_time *= 0.99
 
 
 func _on_weapons_rifle(at):
@@ -22,6 +23,8 @@ func _on_weapons_rifle(at):
 	$rifle/AudioStreamPlayer.play()
 
 func _on_zombie_win():
-	var lives = int ($lives.text)
+	var lives = int ($survivorCount.text)
 	lives -= 1
-	$lives.text = str(lives)
+	$survivorCount.text = str(lives)
+	if not lives:
+		get_tree().change_scene("res://src/gameover.tscn")
