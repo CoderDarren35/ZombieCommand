@@ -9,7 +9,10 @@ enum weapon{
 	RIFLE,
 	GRENADE
 }
+var disabled := false
 func fire(at: Vector2):
+	if disabled:
+		return
 	if at.x < margin_right:
 		return
 	var parent = get_parent()

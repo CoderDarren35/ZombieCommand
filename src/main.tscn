@@ -18,9 +18,9 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 margin_left = 495.0
-margin_top = 334.0
+margin_top = 331.881
 margin_right = 533.0
-margin_bottom = 354.0
+margin_bottom = 351.881
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var speed := 1.0
 signal win
+signal die
 
 var offset := 0.0
 var alive := true
@@ -18,8 +19,6 @@ func _ready():
 func _process(delta):
 	z_index = position.y
 	
-
-
 func _on_AnimatedSprite_frame_changed():
 	move_and_collide(Vector2.DOWN * speed)
 
@@ -33,6 +32,7 @@ func die():
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 	$AnimatedSprite.stop()
+	emit_signal("die")
 
 func _on_death_tween_completed(object, key):
 	if not modulate.a:
@@ -43,7 +43,6 @@ func _on_death_tween_completed(object, key):
 		1, 0, 1,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
-
 
 func _on_VisibilityNotifier2D_screen_exited():
 	if alive:
